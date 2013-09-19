@@ -69,7 +69,8 @@
 			'click a.delete' : 'deletePerson'
 		},
 		initialize: function() {
-				this.model.on('destroy', this.unrender, this);x`
+				this.collection.on('destroy', this.unrender, this);
+				this.collection.on('save', this.render, this);
 		},
 		render: function() {
 			var compiledTemplate = _.template(this.template);
